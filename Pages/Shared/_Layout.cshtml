@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <main>
+    <header class="mainheader" id="mainheader">
+        <a href="/Index">
+            <img src="logo.png" width="300" alt="Logotyp" id="logo"/>
+        </a>
+        <div class="datebox" id="datebox">
+            <p>Dagens datum är: 
+            @{
+                var now = DateTime.Now;
+                string nowstring = now.ToShortDateString();
+                @nowstring;
+             }
+            </p>
+        </div>
+
+    </header>
+    <div class="navcontentdiv">
+            <nav class="mainnav" id="mainnav">
+        <ul>
+            <li>
+                <a href="/Index">Startsida</a>
+            </li>
+            <li>
+                <a href="/Razor">Razor</a>
+            </li>
+            <li>
+                <a href="/About">Om sidan</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="content" id="content">
+        @RenderBody()
+    </div>
+    </div>
+    <footer>
+        <p>Av Simon Andersson - kontakta mig via e-post: <a href="mailto:sian2001@student.miun.se">sian2001@student.miun.se</a></p>
+    </footer>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

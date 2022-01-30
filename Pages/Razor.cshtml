@@ -1,0 +1,60 @@
+﻿@page
+@model DT191G___Moment_1._2.Pages.RazorModel
+@{
+    ViewData["Title"] = "Razor";
+}
+
+<h1 id="razorh1">Razor</h1>
+<p id="razorphl"><strong>Information</strong></p>
+<p><strong>Datum/klockslag: </strong>
+@{
+    var now = DateTime.Now;
+    string nowstring = now.ToString();
+    @nowstring;
+}    
+</p>
+
+@{
+    var today = DateTime.Now.DayOfWeek;
+    string weekday = today.ToString();
+    string message;
+
+    if(weekday == "Monday")
+    {
+        message = "Idag är det måndag!";
+    } else
+    {
+        message = "Idag är det inte måndag!";
+    }
+}
+<br />
+<p>@message</p>
+
+<br />
+
+@{
+    string[] listInput =
+                    {
+                "DT057G, Webbutveckling I",
+                "DT084G, Introduktion till programmering i JavaScript",
+                "GD008G, Typografi och form för webb",
+                "DT163G, Digital bildbehandling för webb",
+                "DT093G, Webbutveckling II",
+                "DT003G, Databaser",
+                "DT152G, Webbdesign för CMS",
+                "DT068G, Webbanvändbarhet",
+                "IK060G, Projektledning",
+                "DT173G, Webbutveckling III"
+            };
+
+    List<string> courses = new List<string>(listInput);
+    }
+    <p><strong>Kurser jag läst:</strong></p>
+    <ul>
+        @{
+    foreach(string course in courses)
+    {
+        <li>@course</li>;
+    }
+    }
+    </ul>
