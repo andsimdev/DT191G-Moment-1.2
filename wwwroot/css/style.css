@@ -1,7 +1,7 @@
 ﻿/* Typsnitt */
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
-/* Reset */
+/* Nollställning och generella inställningar */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,9 @@
     transition: .25s;
 }
 
+/* Datorstorlek */
 @media screen and (min-width: 899px) {
+    /* Dölj menyknappen */
     #mobilemenubtn {
         display: none;
     }
@@ -139,9 +141,11 @@
 
 /* Mobilversion */
 @media screen and (max-width: 900px) {
+    /* Öka teckenstorleken generellt */
     * {
         font-size: 105%;
     }
+
     h1 {
         margin-bottom: 3%;
         font-size: 2rem;

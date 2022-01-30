@@ -8,17 +8,22 @@
 <p id="razorphl"><strong>Information</strong></p>
 <p><strong>Datum/klockslag: </strong>
 @{
+    // Hämta aktuellt datum och tid
     var now = DateTime.Now;
+    // Konvertera till sträng
     string nowstring = now.ToString();
+    // Skriv ut datum och tid från strängen
     @nowstring;
 }    
 </p>
-
 @{
+    // Hämta dagens veckodag
     var today = DateTime.Now.DayOfWeek;
+    // Lagra dagens veckadag som sträng
     string weekday = today.ToString();
+    // Skapa tom strängvariabel för meddelande att skriva ut
     string message;
-
+    // Kontrollera om veckodagen idag är en måndag
     if(weekday == "Monday")
     {
         message = "Idag är det måndag!";
@@ -28,11 +33,15 @@
     }
 }
 <br />
-<p>@message</p>
+<p>
+    <!--Skriv ut meddelande om veckodag-->
+    @message
+</p>
 
 <br />
 
 @{
+    // Lagra alla genomförda kurser i array
     string[] listInput =
                     {
                 "DT057G, Webbutveckling I",
@@ -47,11 +56,13 @@
                 "DT173G, Webbutveckling III"
             };
 
+    // Skapa ny lista och för in arrayens värden i listan
     List<string> courses = new List<string>(listInput);
     }
     <p><strong>Kurser jag läst:</strong></p>
     <ul>
-        @{
+    @{
+    // Loopa igenom alla kurser ur listan
     foreach(string course in courses)
     {
         <li>@course</li>;

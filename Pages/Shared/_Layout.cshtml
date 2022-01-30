@@ -7,6 +7,7 @@
 </head>
 <body>
     <main>
+        <!--Sidhuvud-->
     <header class="mainheader" id="mainheader">
         <a href="/Index">
             <img src="logo.png" width="300" alt="Logotyp" id="logo"/>
@@ -20,11 +21,13 @@
              }
             </p>
         </div>
-
     </header>
+
+    <!--Div för meny och innehåll-->
     <div class="navcontentdiv">
-            <nav class="mainnav" id="mainnav">
-                <button id="mobilemenubtn">Meny</button>
+        <!--Huvudmeny-->
+        <nav class="mainnav" id="mainnav">
+        <button id="mobilemenubtn">Meny</button>
         <ul id="mobilemenuul">
             <li>
                 <a href="/Index">Startsida</a>
@@ -36,15 +39,22 @@
                 <a href="/About">Om sidan</a>
             </li>
         </ul>
-    </nav>
+        </nav>
+
+    <!--Div för innehåll-->
     <div class="content" id="content">
+        <!--Skriv ut dynamiskt sidspecifikt innehåll-->
         @RenderBody()
     </div>
     </div>
+
+    <!--Sidfot-->
     <footer>
         <p>Av Simon Andersson - kontakta mig via e-post: <a href="mailto:sian2001@student.miun.se">sian2001@student.miun.se</a></p>
     </footer>
     </main>
+
+    <!--JavaScript-->
     <script src="js/main.js"></script>
 </body>
 </html>
